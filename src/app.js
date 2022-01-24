@@ -21,6 +21,35 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Thu", "Fri", "Sat", "Sun"];
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+         <div class="col-2">
+           <div class="weather-forecast-date">${day}</div>
+           <img
+             src="http://2.bp.blogspot.com/-FZmv44aXkzo/TpKB1FMyMkI/AAAAAAAAABo/RBzgVAjoT9o/s1600/pink_small_heart_Decimal.png"
+             alt="heart"
+             width="60"
+           />
+           <div class="weather-forecast-temperatures">
+             <span class="weather-forecast-temperature-max"> 18° </span>
+             <span class="weather-forecast-temperature-min"> 12° </span>
+           </div>
+         </div>
+      `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
@@ -55,6 +84,8 @@ function handleSubmit(event) {
   let cityInputElement = document.querySelector("#city-input");
   search(cityInputElement.value);
 }
+
+displayForecast();
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
