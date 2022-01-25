@@ -34,6 +34,11 @@ a {
   color: #f89880;
 }
 
+.btn {
+  background-color: #f89880;
+  border-color: #f89880;
+}
+
 .weather-app-wrapper {
   max-width: 600px;
   margin: 30px auto;
