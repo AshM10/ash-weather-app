@@ -29,6 +29,11 @@ li:first-letter {
   text-transform: capitalize;
 }
 
+a {
+  text-decoration: none;
+  color: #f89880;
+}
+
 .weather-app-wrapper {
   max-width: 600px;
   margin: 30px auto;
